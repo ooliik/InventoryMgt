@@ -1,0 +1,12 @@
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.DAL\bin\Debug\netcoreapp2.0\Inventory.DAL.deps.json
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.DAL\bin\Debug\netcoreapp2.0\Inventory.DAL.dll
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.DAL\bin\Debug\netcoreapp2.0\Inventory.DAL.pdb
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.DAL\bin\Debug\netcoreapp2.0\Inventory.BLL.dll
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.DAL\bin\Debug\netcoreapp2.0\Inventory.BLL.pdb
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.DAL\obj\Debug\netcoreapp2.0\Inventory.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.DAL\obj\Debug\netcoreapp2.0\Inventory.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.DAL\obj\Debug\netcoreapp2.0\Inventory.DAL.AssemblyInfoInputs.cache
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.DAL\obj\Debug\netcoreapp2.0\Inventory.DAL.AssemblyInfo.cs
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.DAL\obj\Debug\netcoreapp2.0\Inventory.DAL.csproj.CopyComplete
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.DAL\obj\Debug\netcoreapp2.0\Inventory.DAL.dll
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.DAL\obj\Debug\netcoreapp2.0\Inventory.DAL.pdb

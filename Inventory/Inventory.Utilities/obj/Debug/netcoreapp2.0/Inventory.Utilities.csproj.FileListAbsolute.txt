@@ -1,0 +1,9 @@
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.Utilities\bin\Debug\netcoreapp2.0\Inventory.Utilities.deps.json
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.Utilities\bin\Debug\netcoreapp2.0\Inventory.Utilities.dll
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.Utilities\bin\Debug\netcoreapp2.0\Inventory.Utilities.pdb
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.Utilities\obj\Debug\netcoreapp2.0\Inventory.Utilities.csprojResolveAssemblyReference.cache
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.Utilities\obj\Debug\netcoreapp2.0\Inventory.Utilities.csproj.CoreCompileInputs.cache
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.Utilities\obj\Debug\netcoreapp2.0\Inventory.Utilities.AssemblyInfoInputs.cache
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.Utilities\obj\Debug\netcoreapp2.0\Inventory.Utilities.AssemblyInfo.cs
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.Utilities\obj\Debug\netcoreapp2.0\Inventory.Utilities.dll
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.Utilities\obj\Debug\netcoreapp2.0\Inventory.Utilities.pdb

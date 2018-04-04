@@ -1,0 +1,9 @@
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.BLL\bin\Debug\netcoreapp2.0\Inventory.BLL.deps.json
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.BLL\bin\Debug\netcoreapp2.0\Inventory.BLL.dll
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.BLL\bin\Debug\netcoreapp2.0\Inventory.BLL.pdb
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.BLL\obj\Debug\netcoreapp2.0\Inventory.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.BLL\obj\Debug\netcoreapp2.0\Inventory.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.BLL\obj\Debug\netcoreapp2.0\Inventory.BLL.AssemblyInfoInputs.cache
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.BLL\obj\Debug\netcoreapp2.0\Inventory.BLL.AssemblyInfo.cs
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.BLL\obj\Debug\netcoreapp2.0\Inventory.BLL.dll
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.BLL\obj\Debug\netcoreapp2.0\Inventory.BLL.pdb
