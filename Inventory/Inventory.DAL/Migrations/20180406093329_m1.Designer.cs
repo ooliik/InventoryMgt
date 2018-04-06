@@ -12,8 +12,8 @@ using System;
 namespace Inventory.DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext<User, Role, int>))]
-    [Migration("20180406084519_m2")]
-    partial class m2
+    [Migration("20180406093329_m1")]
+    partial class m1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -71,6 +71,105 @@ namespace Inventory.DAL.Migrations
                     b.HasIndex("Code");
 
                     b.ToTable("ItemStockKeepUnits");
+                });
+
+            modelBuilder.Entity("Inventory.BLL.Entities.ReceiveHeader", b =>
+                {
+                    b.Property<string>("DocumentID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Description");
+
+                    b.Property<DateTime>("ReceiveDate");
+
+                    b.HasKey("DocumentID");
+
+                    b.ToTable("ReceiveHeaders");
+                });
+
+            modelBuilder.Entity("Inventory.BLL.Entities.ReceiveLine", b =>
+                {
+                    b.Property<string>("DocumentID");
+
+                    b.Property<int>("PositionNumber")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ItemID");
+
+                    b.Property<double>("Quantity");
+
+                    b.Property<double>("ReceiveQuantity");
+
+                    b.Property<double>("ReceivedQuantity");
+
+                    b.Property<string>("StockKeepUnit");
+
+                    b.Property<string>("StockKeepUnittCode");
+
+                    b.Property<string>("WarehouseName");
+
+                    b.Property<string>("WarehouseNumber");
+
+                    b.Property<string>("WarehousePlace");
+
+                    b.HasKey("DocumentID", "PositionNumber");
+
+                    b.HasIndex("ItemID");
+
+                    b.HasIndex("StockKeepUnittCode");
+
+                    b.HasIndex("WarehouseName");
+
+                    b.ToTable("ReceiveLines");
+                });
+
+            modelBuilder.Entity("Inventory.BLL.Entities.ReleaseHeader", b =>
+                {
+                    b.Property<string>("DocumentID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Description");
+
+                    b.Property<DateTime>("ReleaseDate");
+
+                    b.HasKey("DocumentID");
+
+                    b.ToTable("ReleaseHeaders");
+                });
+
+            modelBuilder.Entity("Inventory.BLL.Entities.ReleaseLine", b =>
+                {
+                    b.Property<string>("DocumentID");
+
+                    b.Property<int>("PositionNumber");
+
+                    b.Property<string>("ItemID");
+
+                    b.Property<double>("Quantity");
+
+                    b.Property<double>("ReleaseQuantity");
+
+                    b.Property<double>("ReleasedQuantity");
+
+                    b.Property<string>("StockKeepUnit");
+
+                    b.Property<string>("StockKeepUnittCode");
+
+                    b.Property<string>("WarehouseName");
+
+                    b.Property<string>("WarehouseNumber");
+
+                    b.Property<string>("WarehousePlace");
+
+                    b.HasKey("DocumentID", "PositionNumber");
+
+                    b.HasIndex("ItemID");
+
+                    b.HasIndex("StockKeepUnittCode");
+
+                    b.HasIndex("WarehouseName");
+
+                    b.ToTable("ReleaseLines");
                 });
 
             modelBuilder.Entity("Inventory.BLL.Entities.Role", b =>
@@ -293,6 +392,46 @@ namespace Inventory.DAL.Migrations
                         .WithMany("ItemStockKeepUnits")
                         .HasForeignKey("ItemID")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Inventory.BLL.Entities.ReceiveLine", b =>
+                {
+                    b.HasOne("Inventory.BLL.Entities.ReceiveHeader", "ReceiveHeader")
+                        .WithMany("ReceiveLines")
+                        .HasForeignKey("DocumentID")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Inventory.BLL.Entities.Item", "Item")
+                        .WithMany("ReceiveLines")
+                        .HasForeignKey("ItemID");
+
+                    b.HasOne("Inventory.BLL.Entities.StockKeepUnit", "StockKeepUnitt")
+                        .WithMany("ReceiveLines")
+                        .HasForeignKey("StockKeepUnittCode");
+
+                    b.HasOne("Inventory.BLL.Entities.Warehouse", "Warehouse")
+                        .WithMany("ReceiveLines")
+                        .HasForeignKey("WarehouseName");
+                });
+
+            modelBuilder.Entity("Inventory.BLL.Entities.ReleaseLine", b =>
+                {
+                    b.HasOne("Inventory.BLL.Entities.ReleaseHeader", "ReleaseHeader")
+                        .WithMany("ReleaseLines")
+                        .HasForeignKey("DocumentID")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Inventory.BLL.Entities.Item", "Item")
+                        .WithMany("ReleaseLines")
+                        .HasForeignKey("ItemID");
+
+                    b.HasOne("Inventory.BLL.Entities.StockKeepUnit", "StockKeepUnitt")
+                        .WithMany("ReleaseLines")
+                        .HasForeignKey("StockKeepUnittCode");
+
+                    b.HasOne("Inventory.BLL.Entities.Warehouse", "Warehouse")
+                        .WithMany("ReleaseLines")
+                        .HasForeignKey("WarehouseName");
                 });
 
             modelBuilder.Entity("Inventory.BLL.Entities.WarehousePlace", b =>

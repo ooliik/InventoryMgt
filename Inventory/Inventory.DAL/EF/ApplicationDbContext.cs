@@ -23,6 +23,9 @@ namespace Inventory.DAL.EF
         public virtual DbSet<WarehousePlace> WarehousePlaces { get; set; }
         public virtual DbSet<ReceiveHeader> ReceiveHeaders { get; set; }
         public virtual DbSet<ReceiveLine> ReceiveLines { get; set; }
+        public virtual DbSet<ReleaseHeader> ReleaseHeaders { get; set; }
+        public virtual DbSet<ReleaseLine> ReleaseLines { get; set; }
+        public virtual DbSet<WarehouseEntry> WarhouseEntries { get; set; }
 
         public ApplicationDbContext(ConnectionStringDto connectionStringDto)
         {
@@ -62,6 +65,15 @@ namespace Inventory.DAL.EF
 
             modelBuilder.Entity<ReceiveLine>()
                 .HasKey(ba => new { ba.DocumentID, ba.PositionNumber});
+
+            modelBuilder.Entity<ReleaseHeader>()
+                .HasKey(ba => new { ba.DocumentID});
+
+            modelBuilder.Entity<ReleaseLine>()
+                .HasKey(ba => new { ba.DocumentID, ba.PositionNumber});
+
+            modelBuilder.Entity<WarehouseEntry>()
+                .HasKey(ba => new { ba.EntryNumber});
         }
     }
 }

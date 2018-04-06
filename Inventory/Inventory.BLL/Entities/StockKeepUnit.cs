@@ -11,5 +11,7 @@ namespace Inventory.BLL.Entities
         public double QuantityPerUnit { get; set; }
 
         public virtual List<ItemStockKeepUnit> ItemStockKeepUnits { get; set; }
+        public virtual List<ReceiveLine> ReceiveLines { get; set; }
+        public virtual List<ReleaseLine> ReleaseLines { get; set; }
     }
 }
