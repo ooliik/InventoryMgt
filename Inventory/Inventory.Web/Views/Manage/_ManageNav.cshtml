@@ -1,5 +1,5 @@
 ﻿@using Inventory.Web.Views.Manage
-@using ExampleTemplate.BLL.Entities
+@using Inventory.BLL.Entities
 @inject SignInManager<User> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();

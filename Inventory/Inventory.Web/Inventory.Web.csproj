@@ -30,4 +30,8 @@
     <ProjectReference Include="..\Inventory.ViewModels\Inventory.ViewModels.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Item\" />
+  </ItemGroup>
+
 </Project>

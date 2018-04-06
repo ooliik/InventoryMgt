@@ -21,7 +21,58 @@ namespace Inventory.DAL.Migrations
                 .HasAnnotation("ProductVersion", "2.0.2-rtm-10011")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ExampleTemplate.BLL.Entities.Role", b =>
+            modelBuilder.Entity("Inventory.BLL.Entities.Category", b =>
+                {
+                    b.Property<string>("CategoryID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("DefaultWarehouse");
+
+                    b.Property<string>("DefaultWarehousePlace");
+
+                    b.Property<string>("Description");
+
+                    b.Property<string>("WarehouseName");
+
+                    b.HasKey("CategoryID");
+
+                    b.HasIndex("WarehouseName");
+
+                    b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("Inventory.BLL.Entities.Item", b =>
+                {
+                    b.Property<string>("ItemID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CategoryID");
+
+                    b.Property<string>("Description");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("ItemID");
+
+                    b.HasIndex("CategoryID");
+
+                    b.ToTable("Items");
+                });
+
+            modelBuilder.Entity("Inventory.BLL.Entities.ItemStockKeepUnit", b =>
+                {
+                    b.Property<string>("ItemID");
+
+                    b.Property<string>("Code");
+
+                    b.HasKey("ItemID", "Code");
+
+                    b.HasIndex("Code");
+
+                    b.ToTable("ItemStockKeepUnits");
+                });
+
+            modelBuilder.Entity("Inventory.BLL.Entities.Role", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -45,7 +96,21 @@ namespace Inventory.DAL.Migrations
                     b.ToTable("AspNetRoles");
                 });
 
-            modelBuilder.Entity("ExampleTemplate.BLL.Entities.User", b =>
+            modelBuilder.Entity("Inventory.BLL.Entities.StockKeepUnit", b =>
+                {
+                    b.Property<string>("Code")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Description");
+
+                    b.Property<double>("QuantityPerUnit");
+
+                    b.HasKey("Code");
+
+                    b.ToTable("StockKeepUnits");
+                });
+
+            modelBuilder.Entity("Inventory.BLL.Entities.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -94,6 +159,31 @@ namespace Inventory.DAL.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("Inventory.BLL.Entities.Warehouse", b =>
+                {
+                    b.Property<string>("WarehouseName")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Address");
+
+                    b.Property<string>("Description");
+
+                    b.HasKey("WarehouseName");
+
+                    b.ToTable("Warehouses");
+                });
+
+            modelBuilder.Entity("Inventory.BLL.Entities.WarehousePlace", b =>
+                {
+                    b.Property<string>("WarehouseName");
+
+                    b.Property<string>("WarehousePlaceName");
+
+                    b.HasKey("WarehouseName", "WarehousePlaceName");
+
+                    b.ToTable("WarehousePlaces");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
@@ -177,9 +267,44 @@ namespace Inventory.DAL.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("Inventory.BLL.Entities.Category", b =>
+                {
+                    b.HasOne("Inventory.BLL.Entities.Warehouse", "Warehouse")
+                        .WithMany("Categories")
+                        .HasForeignKey("WarehouseName");
+                });
+
+            modelBuilder.Entity("Inventory.BLL.Entities.Item", b =>
+                {
+                    b.HasOne("Inventory.BLL.Entities.Category", "Category")
+                        .WithMany("Items")
+                        .HasForeignKey("CategoryID");
+                });
+
+            modelBuilder.Entity("Inventory.BLL.Entities.ItemStockKeepUnit", b =>
+                {
+                    b.HasOne("Inventory.BLL.Entities.StockKeepUnit", "StockKeepUnit")
+                        .WithMany("ItemStockKeepUnits")
+                        .HasForeignKey("Code")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Inventory.BLL.Entities.Item", "Item")
+                        .WithMany("ItemStockKeepUnits")
+                        .HasForeignKey("ItemID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Inventory.BLL.Entities.WarehousePlace", b =>
+                {
+                    b.HasOne("Inventory.BLL.Entities.Warehouse", "Warehouse")
+                        .WithMany("WarehousePlaces")
+                        .HasForeignKey("WarehouseName")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
-                    b.HasOne("ExampleTemplate.BLL.Entities.Role")
+                    b.HasOne("Inventory.BLL.Entities.Role")
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -187,7 +312,7 @@ namespace Inventory.DAL.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
                 {
-                    b.HasOne("ExampleTemplate.BLL.Entities.User")
+                    b.HasOne("Inventory.BLL.Entities.User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -195,7 +320,7 @@ namespace Inventory.DAL.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
                 {
-                    b.HasOne("ExampleTemplate.BLL.Entities.User")
+                    b.HasOne("Inventory.BLL.Entities.User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -203,12 +328,12 @@ namespace Inventory.DAL.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<int>", b =>
                 {
-                    b.HasOne("ExampleTemplate.BLL.Entities.Role")
+                    b.HasOne("Inventory.BLL.Entities.Role")
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("ExampleTemplate.BLL.Entities.User")
+                    b.HasOne("Inventory.BLL.Entities.User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -216,7 +341,7 @@ namespace Inventory.DAL.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
                 {
-                    b.HasOne("ExampleTemplate.BLL.Entities.User")
+                    b.HasOne("Inventory.BLL.Entities.User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
