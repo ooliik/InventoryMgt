@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Inventory.BLL\Inventory.BLL.csproj" />
+    <ProjectReference Include="..\Inventory.DAL\Inventory.DAL.csproj" />
     <ProjectReference Include="..\Inventory.Services\Inventory.Services.csproj" />
     <ProjectReference Include="..\Inventory.Utilities\Inventory.Utilities.csproj" />
     <ProjectReference Include="..\Inventory.ViewModels\Inventory.ViewModels.csproj" />

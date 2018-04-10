@@ -13768,6 +13768,7 @@
       "AutoMapper >= 6.2.2",
       "DataAccessLayer.Core.EntityFramework >= 1.0.9",
       "Inventory.BLL >= 1.0.0",
+      "Inventory.DAL >= 1.0.0",
       "Inventory.Services >= 1.0.0",
       "Inventory.Utilities >= 1.0.0",
       "Inventory.ViewModels >= 1.0.0",
@@ -13813,6 +13814,9 @@
           "projectReferences": {
             "C:\\Users\\Ola\\Documents\\GitHub\\Inventory\\Inventory\\Inventory.BLL\\Inventory.BLL.csproj": {
               "projectPath": "C:\\Users\\Ola\\Documents\\GitHub\\Inventory\\Inventory\\Inventory.BLL\\Inventory.BLL.csproj"
+            },
+            "C:\\Users\\Ola\\Documents\\GitHub\\Inventory\\Inventory\\Inventory.DAL\\Inventory.DAL.csproj": {
+              "projectPath": "C:\\Users\\Ola\\Documents\\GitHub\\Inventory\\Inventory\\Inventory.DAL\\Inventory.DAL.csproj"
             },
             "C:\\Users\\Ola\\Documents\\GitHub\\Inventory\\Inventory\\Inventory.Services\\Inventory.Services.csproj": {
               "projectPath": "C:\\Users\\Ola\\Documents\\GitHub\\Inventory\\Inventory\\Inventory.Services\\Inventory.Services.csproj"

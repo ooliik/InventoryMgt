@@ -6,12 +6,15 @@ using Inventory.DAL.EF;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Inventory.BLL.Entities;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace Inventory.Web.Controllers
 {
     public class CategoryController : Controller
     {
-      
+        
+        
         // GET: Category
         public ActionResult Index()
         {
