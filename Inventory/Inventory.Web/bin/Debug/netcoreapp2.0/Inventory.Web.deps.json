@@ -26,6 +26,7 @@
           "AutoMapper": "6.2.2",
           "DataAccessLayer.Core.EntityFramework": "1.0.9",
           "Inventory.BLL": "1.0.0",
+          "Inventory.DAL": "1.0.0",
           "Inventory.Services": "1.0.0",
           "Inventory.Utilities": "1.0.0",
           "Inventory.ViewModels": "1.0.0",
