@@ -33,5 +33,7 @@ namespace Inventory.BLL.Entities
         public virtual Item Item { get; set; }
         public virtual StockKeepUnit StockKeepUnit { get; set; }
         public virtual Warehouse Warehouse { get; set; }
+        public virtual Customer Customer { get; set; }
+        public virtual Vendor Vendor { get; set; }
     }
 }

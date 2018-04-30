@@ -1,13 +1,14 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "9a70f310e836577073f08a4468928e7c72fb22b6"
+    "signature": "e1c6eb0812375fea14f1ae4c416f80e3b4a66d4d"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.0": {
       "Inventory.ViewModels/1.0.0": {
         "dependencies": {
+          "Inventory.BLL": "1.0.0",
           "Microsoft.AspNetCore.Identity": "2.0.2",
           "Microsoft.AspNetCore.Mvc.Core": "2.0.3"
         },
@@ -182,6 +183,16 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Identity.dll": {}
         }
       },
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore/2.0.2": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity": "2.0.2",
+          "Microsoft.EntityFrameworkCore.Relational": "2.0.2",
+          "Microsoft.Extensions.Identity.Stores": "2.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Mvc.Abstractions/2.0.3": {
         "dependencies": {
           "Microsoft.AspNetCore.Routing.Abstractions": "2.0.2",
@@ -247,26 +258,7 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.WebUtilities.dll": {}
         }
       },
-      "Microsoft.CSharp/4.0.1": {
-        "dependencies": {
-          "System.Collections": "4.0.11",
-          "System.Diagnostics.Debug": "4.0.11",
-          "System.Dynamic.Runtime": "4.0.11",
-          "System.Globalization": "4.0.11",
-          "System.Linq": "4.1.0",
-          "System.Linq.Expressions": "4.1.0",
-          "System.ObjectModel": "4.0.12",
-          "System.Reflection": "4.1.0",
-          "System.Reflection.Extensions": "4.0.1",
-          "System.Reflection.Primitives": "4.0.1",
-          "System.Reflection.TypeExtensions": "4.1.0",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Runtime.InteropServices": "4.1.0",
-          "System.Threading": "4.0.11"
-        }
-      },
+      "Microsoft.CSharp/4.4.0": {},
       "Microsoft.DotNet.PlatformAbstractions/2.0.3": {
         "dependencies": {
           "System.AppContext": "4.1.0",
@@ -282,12 +274,63 @@
           "lib/netstandard1.3/Microsoft.DotNet.PlatformAbstractions.dll": {}
         }
       },
+      "Microsoft.EntityFrameworkCore/2.0.2": {
+        "dependencies": {
+          "Microsoft.Extensions.Caching.Memory": "2.0.1",
+          "Microsoft.Extensions.DependencyInjection": "2.0.0",
+          "Microsoft.Extensions.Logging": "2.0.1",
+          "Remotion.Linq": "2.1.1",
+          "System.Collections.Immutable": "1.4.0",
+          "System.ComponentModel.Annotations": "4.4.0",
+          "System.Diagnostics.DiagnosticSource": "4.4.1",
+          "System.Interactive.Async": "3.1.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.dll": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Relational/2.0.2": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.4.0",
+          "Microsoft.EntityFrameworkCore": "2.0.2",
+          "Microsoft.Extensions.Configuration.Abstractions": "2.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Caching.Abstractions/2.0.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "2.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Caching.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Caching.Memory/2.0.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Caching.Abstractions": "2.0.1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0",
+          "Microsoft.Extensions.Options": "2.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Caching.Memory.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration.Abstractions/2.0.1": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "2.0.0"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection/2.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.dll": {}
         }
       },
       "Microsoft.Extensions.DependencyInjection.Abstractions/2.0.0": {
@@ -329,6 +372,16 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.Identity.Core.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Identity.Stores/2.0.2": {
+        "dependencies": {
+          "Microsoft.Extensions.Identity.Core": "2.0.2",
+          "Microsoft.Extensions.Logging": "2.0.1",
+          "System.ComponentModel.Annotations": "4.4.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Identity.Stores.dll": {}
         }
       },
       "Microsoft.Extensions.Logging/2.0.1": {
@@ -406,7 +459,7 @@
       },
       "Newtonsoft.Json/9.0.1": {
         "dependencies": {
-          "Microsoft.CSharp": "4.0.1",
+          "Microsoft.CSharp": "4.4.0",
           "System.Collections": "4.0.11",
           "System.Diagnostics.Debug": "4.0.11",
           "System.Dynamic.Runtime": "4.0.11",
@@ -433,6 +486,24 @@
           "lib/netstandard1.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Remotion.Linq/2.1.1": {
+        "dependencies": {
+          "System.Collections": "4.0.11",
+          "System.Diagnostics.Debug": "4.0.11",
+          "System.Linq": "4.1.0",
+          "System.Linq.Expressions": "4.1.0",
+          "System.Linq.Queryable": "4.0.1",
+          "System.ObjectModel": "4.0.12",
+          "System.Reflection": "4.1.0",
+          "System.Reflection.Extensions": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Threading": "4.0.11"
+        },
+        "runtime": {
+          "lib/netstandard1.0/Remotion.Linq.dll": {}
+        }
+      },
       "runtime.native.System/4.0.0": {
         "dependencies": {
           "Microsoft.NETCore.Targets": "1.0.1"
@@ -450,6 +521,7 @@
           "System.Runtime": "4.1.0"
         }
       },
+      "System.Collections.Immutable/1.4.0": {},
       "System.ComponentModel.Annotations/4.4.0": {},
       "System.Diagnostics.Debug/4.0.11": {
         "dependencies": {
@@ -487,6 +559,11 @@
         "dependencies": {
           "Microsoft.NETCore.Targets": "1.0.1",
           "System.Runtime": "4.1.0"
+        }
+      },
+      "System.Interactive.Async/3.1.1": {
+        "runtime": {
+          "lib/netstandard1.3/System.Interactive.Async.dll": {}
         }
       },
       "System.IO/4.1.0": {
@@ -541,6 +618,18 @@
           "System.Runtime": "4.1.0",
           "System.Runtime.Extensions": "4.1.0",
           "System.Threading": "4.0.11"
+        }
+      },
+      "System.Linq.Queryable/4.0.1": {
+        "dependencies": {
+          "System.Collections": "4.0.11",
+          "System.Diagnostics.Debug": "4.0.11",
+          "System.Linq": "4.1.0",
+          "System.Linq.Expressions": "4.1.0",
+          "System.Reflection": "4.1.0",
+          "System.Reflection.Extensions": "4.0.1",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0"
         }
       },
       "System.ObjectModel/4.0.12": {
@@ -781,6 +870,14 @@
           "System.Threading": "4.0.11",
           "System.Xml.ReaderWriter": "4.0.11"
         }
+      },
+      "Inventory.BLL/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.0.2"
+        },
+        "runtime": {
+          "Inventory.BLL.dll": {}
+        }
       }
     }
   },
@@ -909,6 +1006,13 @@
       "path": "microsoft.aspnetcore.identity/2.0.2",
       "hashPath": "microsoft.aspnetcore.identity.2.0.2.nupkg.sha512"
     },
+    "Microsoft.AspNetCore.Identity.EntityFrameworkCore/2.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QSPJenMEmjZmKnZ+ZJvMudhzHISHbEm2LarScz6AHZwgoRY0j+ZdKTVLtN+tAaFeJ2AXCxRVkeBAouLHFyHSAw==",
+      "path": "microsoft.aspnetcore.identity.entityframeworkcore/2.0.2",
+      "hashPath": "microsoft.aspnetcore.identity.entityframeworkcore.2.0.2.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Mvc.Abstractions/2.0.3": {
       "type": "package",
       "serviceable": true,
@@ -951,12 +1055,12 @@
       "path": "microsoft.aspnetcore.webutilities/2.0.2",
       "hashPath": "microsoft.aspnetcore.webutilities.2.0.2.nupkg.sha512"
     },
-    "Microsoft.CSharp/4.0.1": {
+    "Microsoft.CSharp/4.4.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-17h8b5mXa87XYKrrVqdgZ38JefSUqLChUQpXgSnpzsM0nDOhE40FTeNWOJ/YmySGV6tG6T8+hjz6vxbknHJr6A==",
-      "path": "microsoft.csharp/4.0.1",
-      "hashPath": "microsoft.csharp.4.0.1.nupkg.sha512"
+      "sha512": "sha512-vvVR/B08YVghQ4jHEloxqw2ZWzEGE1AOA5E0DioUM3ujbXz6FD3AfB/0Jl2ohJPd0nXYGwmPe1En6HTsSriq1A==",
+      "path": "microsoft.csharp/4.4.0",
+      "hashPath": "microsoft.csharp.4.4.0.nupkg.sha512"
     },
     "Microsoft.DotNet.PlatformAbstractions/2.0.3": {
       "type": "package",
@@ -965,12 +1069,47 @@
       "path": "microsoft.dotnet.platformabstractions/2.0.3",
       "hashPath": "microsoft.dotnet.platformabstractions.2.0.3.nupkg.sha512"
     },
+    "Microsoft.EntityFrameworkCore/2.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TjlP5PH687P1pHVUEUlXeoywd5iEXLHxOKfKfVIWsesXGq+hSz0Z8/afWo3mvuBIR0yLMc4Dfh5baTTKzYDQKw==",
+      "path": "microsoft.entityframeworkcore/2.0.2",
+      "hashPath": "microsoft.entityframeworkcore.2.0.2.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Relational/2.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tuB7TVi2VM5nmwmo2jXOOo5kH/iDaiGW2pHi8xHdy0YTj/ywNP8adobu35u4CabPaH88di6SLveeAdVi80vffw==",
+      "path": "microsoft.entityframeworkcore.relational/2.0.2",
+      "hashPath": "microsoft.entityframeworkcore.relational.2.0.2.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Caching.Abstractions/2.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NobDNbehAbMYUApMXLd9XSt9UznGCgPW9PW4Ybe6S5jKqkd5RcTnaKm0FODcgyx+7B1hIGx7dZwa1bVdiSbHAg==",
+      "path": "microsoft.extensions.caching.abstractions/2.0.1",
+      "hashPath": "microsoft.extensions.caching.abstractions.2.0.1.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Caching.Memory/2.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GVtJD0uhoLOkXBfYZAIRDexEr2qg0QHbUo3CIjmtoGpFWHuGHTvjGqRlybMKIYTpt0BxKpXMn4fqhS4ff10llA==",
+      "path": "microsoft.extensions.caching.memory/2.0.1",
+      "hashPath": "microsoft.extensions.caching.memory.2.0.1.nupkg.sha512"
+    },
     "Microsoft.Extensions.Configuration.Abstractions/2.0.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-stGq1c136UUYOsgQuJ5fjiygqZhgt6Kj0pm4iL0qq1MICNgEKTJ4tnbXLkZfrDHDz+olsT2VY9cVv2yshg+m+A==",
       "path": "microsoft.extensions.configuration.abstractions/2.0.1",
       "hashPath": "microsoft.extensions.configuration.abstractions.2.0.1.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wakg18gHYiUL1pcjjyZuYk6OvDpbSw1E7IWxm78TMepsr+gQ8W0tWzuRm0q/9RFblngwPwo15rrgZSUV51W5Iw==",
+      "path": "microsoft.extensions.dependencyinjection/2.0.0",
+      "hashPath": "microsoft.extensions.dependencyinjection.2.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyInjection.Abstractions/2.0.0": {
       "type": "package",
@@ -1006,6 +1145,13 @@
       "sha512": "sha512-Lx5bFoGV2q83SdNh6SrzZczngu/FQ8N/VegNxyEl8h+UwFQJrVj9S3Ukp5Xd1jdFaRT4Xus8P8aGBdy8V7Iwew==",
       "path": "microsoft.extensions.identity.core/2.0.2",
       "hashPath": "microsoft.extensions.identity.core.2.0.2.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Identity.Stores/2.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9BTVdltrgFh+O69zm4fHZ50PV+GDEdGqcp+KMlbrOW+RmAgbVkQvMV25ZZChUAlT/uQb7BnAF1h5+2xWEyNQzA==",
+      "path": "microsoft.extensions.identity.stores/2.0.2",
+      "hashPath": "microsoft.extensions.identity.stores.2.0.2.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging/2.0.1": {
       "type": "package",
@@ -1077,6 +1223,13 @@
       "path": "newtonsoft.json/9.0.1",
       "hashPath": "newtonsoft.json.9.0.1.nupkg.sha512"
     },
+    "Remotion.Linq/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IJn0BqkvwEDpP+2qjvci7n4/a9f7DhKESLWb2/uG4xQh3rTkGTBUz69bI4IivCoKkTFAqjXxYDZw2K/npohjsw==",
+      "path": "remotion.linq/2.1.1",
+      "hashPath": "remotion.linq.2.1.1.nupkg.sha512"
+    },
     "runtime.native.System/4.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1104,6 +1257,13 @@
       "sha512": "sha512-YUJGz6eFKqS0V//mLt25vFGrrCvOnsXjlvFQs+KimpwNxug9x0Pzy4PlFMU3Q2IzqAa9G2L4LsK3+9vCBK7oTg==",
       "path": "system.collections/4.0.11",
       "hashPath": "system.collections.4.0.11.nupkg.sha512"
+    },
+    "System.Collections.Immutable/1.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-71hw5RUJRu5+q/geUY69gpXD8Upd12cH+F3MwpXV2zle7Bqqkrmc1JblOTuvUcgmdnUtQvBlV5e1d6RH+H2lvA==",
+      "path": "system.collections.immutable/1.4.0",
+      "hashPath": "system.collections.immutable.1.4.0.nupkg.sha512"
     },
     "System.ComponentModel.Annotations/4.4.0": {
       "type": "package",
@@ -1147,6 +1307,13 @@
       "path": "system.globalization/4.0.11",
       "hashPath": "system.globalization.4.0.11.nupkg.sha512"
     },
+    "System.Interactive.Async/3.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hZccYiIE5RS1/J9Tb/BNtosAGVggdlsJm4Ojdu+gDV0p4AIi+LUfUogMKkRacljQEJd2AG6vYzvcjhQFkqoZmw==",
+      "path": "system.interactive.async/3.1.1",
+      "hashPath": "system.interactive.async.3.1.1.nupkg.sha512"
+    },
     "System.IO/4.1.0": {
       "type": "package",
       "serviceable": true,
@@ -1181,6 +1348,13 @@
       "sha512": "sha512-I+y02iqkgmCAyfbqOmSDOgqdZQ5tTj80Akm5BPSS8EeB0VGWdy6X1KCoYe8Pk6pwDoAKZUOdLVxnTJcExiv5zw==",
       "path": "system.linq.expressions/4.1.0",
       "hashPath": "system.linq.expressions.4.1.0.nupkg.sha512"
+    },
+    "System.Linq.Queryable/4.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
+      "path": "system.linq.queryable/4.0.1",
+      "hashPath": "system.linq.queryable.4.0.1.nupkg.sha512"
     },
     "System.ObjectModel/4.0.12": {
       "type": "package",
@@ -1377,6 +1551,11 @@
       "sha512": "sha512-Mk2mKmPi0nWaoiYeotq1dgeNK1fqWh61+EK+w4Wu8SWuTYLzpUnschb59bJtGywaPq7SmTuPf44wrXRwbIrukg==",
       "path": "system.xml.xdocument/4.0.11",
       "hashPath": "system.xml.xdocument.4.0.11.nupkg.sha512"
+    },
+    "Inventory.BLL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

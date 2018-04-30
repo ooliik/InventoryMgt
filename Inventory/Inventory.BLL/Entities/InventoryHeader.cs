@@ -13,6 +13,6 @@ namespace Inventory.BLL.Entities
 
         public virtual Warehouse Warehouse { get; set; }
 
-        public virtual List<InventoryLine> InventoryLines { get; set; }
+        public virtual ICollection<InventoryLine> InventoryLines { get; set; }
     }
 }

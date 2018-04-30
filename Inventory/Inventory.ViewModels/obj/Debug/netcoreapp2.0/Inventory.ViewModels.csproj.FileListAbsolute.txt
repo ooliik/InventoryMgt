@@ -7,3 +7,6 @@ C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.ViewModels\obj\Debug
 C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.ViewModels\obj\Debug\netcoreapp2.0\Inventory.ViewModels.AssemblyInfo.cs
 C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.ViewModels\obj\Debug\netcoreapp2.0\Inventory.ViewModels.dll
 C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.ViewModels\obj\Debug\netcoreapp2.0\Inventory.ViewModels.pdb
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.ViewModels\bin\Debug\netcoreapp2.0\Inventory.BLL.dll
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.ViewModels\bin\Debug\netcoreapp2.0\Inventory.BLL.pdb
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.ViewModels\obj\Debug\netcoreapp2.0\Inventory.ViewModels.csproj.CopyComplete

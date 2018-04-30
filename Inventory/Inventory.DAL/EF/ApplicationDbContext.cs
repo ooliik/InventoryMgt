@@ -15,7 +15,7 @@ namespace Inventory.DAL.EF
 
         // Table properties e.g
         // public virtual DbSet<Entity> TableName { get; set; }
-        public virtual DbSet<Category> Categories { get; set; }
+       
         public virtual DbSet<Item> Items { get; set; }
         public virtual DbSet<StockKeepUnit> StockKeepUnits { get; set; }
         public virtual DbSet<ItemStockKeepUnit> ItemStockKeepUnits { get; set; }
@@ -28,6 +28,8 @@ namespace Inventory.DAL.EF
         public virtual DbSet<WarehouseEntry> WarhouseEntries { get; set; }
         public virtual DbSet<InventoryHeader> InventoryHeaders { get; set; }
         public virtual DbSet<InventoryLine> InventoryLines { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<Vendor> Vendors { get; set; }
 
         public ApplicationDbContext(ConnectionStringDto connectionStringDto)
         {
@@ -58,6 +60,12 @@ namespace Inventory.DAL.EF
 
             modelBuilder.Entity<Warehouse>()
                 .HasKey(ba => new { ba.WarehouseName});
+
+            modelBuilder.Entity<Customer>()
+               .HasKey(ba => new { ba.CustomerID });
+
+            modelBuilder.Entity<Vendor>()
+                .HasKey(ba => new { ba.VendorID });
 
             modelBuilder.Entity<WarehousePlace>()
                 .HasKey(ba => new { ba.WarehouseName, ba.WarehousePlaceName});
