@@ -15,9 +15,9 @@ C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.Web\bin\Debug\netcor
 C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.Web\bin\Debug\netcoreapp2.0\Inventory.DAL.pdb
 C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.Web\obj\Debug\netcoreapp2.0\Inventory.Web.csprojResolveAssemblyReference.cache
 C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.Web\obj\Debug\netcoreapp2.0\Inventory.Web.csproj.CoreCompileInputs.cache
-C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.Web\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
 C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.Web\obj\Debug\netcoreapp2.0\Inventory.Web.AssemblyInfoInputs.cache
 C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.Web\obj\Debug\netcoreapp2.0\Inventory.Web.AssemblyInfo.cs
 C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.Web\obj\Debug\netcoreapp2.0\Inventory.Web.csproj.CopyComplete
 C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.Web\obj\Debug\netcoreapp2.0\Inventory.Web.dll
 C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.Web\obj\Debug\netcoreapp2.0\Inventory.Web.pdb
+C:\Users\Ola\Documents\GitHub\Inventory\Inventory\Inventory.Web\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs

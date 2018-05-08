@@ -2,98 +2,53 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Inventory.DAL.EF;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Inventory.BLL.Entities;
-using Microsoft.EntityFrameworkCore.Infrastructure;
+using Inventory.Services.Interfaces;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using DataAccessLayer.Core.Interfaces.UoW;
+using Microsoft.Extensions.Logging;
+using Inventory.ViewModels;
 
 namespace Inventory.Web.Controllers
 {
-    public class CategoryController : Controller
+    public class CategoryController : BaseController
     {
-        
-        
-        // GET: Category
-        public ActionResult Index()
+        private readonly ICategoryService _categoryService;
+        //private readonly UserManager<User> _userManager;
+        public CategoryController(ICategoryService categoryService, 
+                                    UserManager<User> userManager,
+                                    IUnitOfWork uow,
+                                    ILoggerFactory loggerFactory) : base(uow, loggerFactory)
+        {
+            //_userManager = userManager;
+            _categoryService = categoryService;
+        }
+
+
+        public IActionResult Index()
+        {
+            IEnumerable<CategoryVm> categoryVm = _categoryService.GetCategories();
+            //if (HttpContext.Request.Headers["x-requested-with"] == "XMLHttpRequest")
+            //    return PartialView(categoryVm);
+            //else
+                return View(categoryVm);
+        }
+
+        public IActionResult Create()
         {
             return View();
         }
 
-        // GET: Category/Details/5
-        public ActionResult Details(int id)
+        public IActionResult Create(CategoryVm categoryVm)
         {
-            return View();
-        }
-
-        // GET: Category/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Category/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
+            if(ModelState.IsValid)
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction(nameof(Index));
+                _categoryService.AddOrUpdateCategory(categoryVm);
+                return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Category/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Category/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Category/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Category/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            else
+                return View(ModelState);
         }
     }
 }

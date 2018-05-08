@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Inventory.BLL.Entities
@@ -7,6 +8,7 @@ namespace Inventory.BLL.Entities
     public class ReleaseLine
     {
         public string DocumentID { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PositionNumber { get; set; }
         public string ItemID { get; set; }
         public string StockKeepUnit { get; set; }

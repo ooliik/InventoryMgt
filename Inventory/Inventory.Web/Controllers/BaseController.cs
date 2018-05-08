@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 namespace Inventory.Web.Controllers
 {
 
-    public abstract class BaseController : Controller
+    public class BaseController : Controller
     {
         protected readonly IUnitOfWork Uow;
         protected readonly ILogger Logger;

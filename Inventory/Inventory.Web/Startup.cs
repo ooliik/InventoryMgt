@@ -137,6 +137,13 @@ namespace Inventory.Web
             services.AddScoped<IRepository<User>, EntityFrameworkRepository<User>>();
             services.AddScoped<IRepository<Role>, EntityFrameworkRepository<Role>>();
             services.AddScoped<IRepository<IdentityUserRole<int>>, EntityFrameworkRepository<IdentityUserRole<int>>>();
+
+            // >> KPA
+            services.AddScoped<ICategoryService, CategoryService>();
+
+
+
+            // << KPA
             #endregion
             Services = services;
         }
@@ -162,7 +169,7 @@ namespace Inventory.Web
 
             app.UseSession();
             var dbContext = Services.BuildServiceProvider().GetRequiredService<DbContext>();
-           // dbContext.Database.Migrate();
+            dbContext.Database.Migrate();
             var userManager = Services.BuildServiceProvider().GetRequiredService<UserManager<User>>();
             var roleManager = Services.BuildServiceProvider().GetRequiredService<RoleManager<Role>>();
             Seed.RunSeed(dbContext, roleManager, userManager);
